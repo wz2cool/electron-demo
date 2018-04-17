@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "packageDarwin": "electron-packager . --platform=darwin --arch=x64 --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
-    "packageWin": "electron-packager . --platform=win32 --arch=x64 --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\""
+    "dist": "build"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -20,6 +19,13 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-packager": "~12.0.1"
+    "electron-builder": "~20.8.1"
+  },
+  "build": {
+    "appId": "com.frwan.quickstart",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
   }
 }
