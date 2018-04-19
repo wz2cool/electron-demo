@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-demo",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -18,14 +18,25 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.4",
-    "electron-builder": "~20.8.1"
+    "electron": "~1.8.4",
+    "electron-builder": "~20.8.2"
   },
   "build": {
-    "appId": "com.frwan.quickstart",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "wz2cool",
+        "repo": "electron-demo"
+      }
+    ],
+    "appId": "com.github.wz2cool.electron-demo",
     "win": {
       "target": "nsis",
       "icon": "build/icon.ico"
     }
+  },
+  "dependencies": {
+    "electron-log": "~2.2.14",
+    "electron-updater": "~2.21.8"
   }
 }
