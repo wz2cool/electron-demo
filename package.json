@@ -22,13 +22,11 @@
     "electron-builder": "~20.8.2"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "wz2cool",
-        "repo": "electron-demo"
-      }
-    ],
+    "publish": [{
+      "provider": "github",
+      "owner": "wz2cool",
+      "repo": "electron-demo"
+    }],
     "appId": "com.github.wz2cool.electron-demo",
     "win": {
       "target": "nsis",
