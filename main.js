@@ -4,8 +4,10 @@ const {
   autoUpdater
 } = require("electron-updater");
 
+log.transports.file.level = 'info';
+log.transports.file.file = __dirname + '/log.log';
+
 autoUpdater.logger = log;
-autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
 
 // Module to control application life.
@@ -78,7 +80,7 @@ autoUpdater.on('update-downloaded', (info) => {
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 
-app.on('ready', function()  {
+app.on('ready', function () {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
