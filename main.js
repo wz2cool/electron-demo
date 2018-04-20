@@ -1,11 +1,17 @@
 const electron = require('electron')
 const log = require('electron-log');
+const fs = require('fs')
 const {
   autoUpdater
 } = require("electron-updater");
 
 log.transports.file.level = 'info';
-log.transports.file.file = __dirname + '/log.log';
+log.transports.console.format = '{h}:{i}:{s}:{ms} {text}';
+log.transports.file.maxSize = 5 * 1024 * 1024;
+log.transports.file.file = __dirname + '/log.txt';
+log.transports.file.streamConfig = { flags: 'w' };
+log.transports.file.stream = fs.createWriteStream('log.txt');
+log.transports.file.appName = 'test';
 
 autoUpdater.logger = log;
 log.info('App starting...');

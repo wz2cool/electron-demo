@@ -1,6 +1,6 @@
 {
   "name": "electron-demo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -23,13 +23,10 @@
     "electron-builder": "~20.8.2"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "wz2cool",
-        "repo": "electron-demo"
-      }
-    ],
+    "publish": [{
+      "provider": "generic",
+      "url": "http://118.25.40.123:8082"
+    }],
     "appId": "com.github.wz2cool.electron-demo",
     "win": {
       "target": "nsis",
